@@ -28,7 +28,10 @@ print(logo)
 should_end = False
 while not should_end:
   direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-  text = input("Type your message:\n").lower()
+  #text = input("Type your message:\n").lower()
+  textfile = open("textfile.txt","r")
+  text = textfile.read().lower()
+  textfile.close()
   shift = int(input("Type the shift number:\n"))
   
   #What if the user enters a shift that is greater than the number of letters in the alphabet?
